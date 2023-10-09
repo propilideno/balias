@@ -1,2 +1,2 @@
-# Balias - Daily task automation with Bash Aliases
-Daily-Use Bash Alias Collection
+# Daily task automation with bash functions and aliases
+Stop loosing time with daily tasks overhead, automate it with bash functions and aliases.

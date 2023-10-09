@@ -10,13 +10,15 @@ install(){
 	read -r -p "Select your favorite installer: " choice
  	case "$choice" in
 		1)
-			echo "Selected 1"
+			pip install yt-dlp
 		;;
 		2)
-			echo "Selected 2"
+			sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
+			sudo apt update                                 # Update package list
+			sudo apt install yt-dlp                         # Install yt-dlp
 		;;
 		3)
-			echo "Selected 3"
+			brew install yt-dlp
 		;;
 		*)
 			error_input "$choice"
@@ -25,7 +27,7 @@ install(){
 }
 
 menu(){
-	balias 32
+	balias 95
 	echo "=========== Youtube Video Downloader ==========="
 	echo "| Installer          | Operating System  |"
 	echo "| 1) pip             | Multiplatform     |"

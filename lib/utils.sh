@@ -69,12 +69,11 @@ install(){
 
 # Usage: question <string>
 question(){
-	echo "$1? (y/n): "
+	echo "$1 (y/n): "
 	read -r choice
 	while true; do
 		case "$choice" in
 			'y'|'Y')
-				install $1
 				break
 			;;
 			'n'|'N')

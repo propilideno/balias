@@ -1,11 +1,19 @@
 #!/bin/bash
-#################### IMPORT ####################
-# source ../../lib/colors.sh
-# source ../../lib/error_handling.sh
-# source ../../lib/utils.sh
-# source ../../lib/decorators.sh
-#################### SETUP ####################
+#################### TEMPORARY ####################
+# Usage: importRaw <package_name>
+importRaw(){
+	local rawPath="https://raw.githubusercontent.com/propilideno/balias/main/lib/$1.sh"
+	source <(curl -sSL "$rawPath")
+}
+importRaw "colors"
+importRaw "error_handling"
+importRaw "utils"
+importRaw "decorators"
+#################### TEMPORARY ####################
 
+
+
+#################### MAIN ####################
 
 menuInstallation(){
 	echo "================================================"
@@ -37,7 +45,6 @@ installDeps(){
 }
 
 menu(){
-	balias 95
 	echo "=========== Youtube Video Downloader ==========="
 	echo " - Package Required: $1"
 	echo " - Description: $1 is a youtube-dl fork based on the now inactive youtube-dlc."

@@ -1,13 +1,13 @@
 #!/bin/bash
-#################### IMPORT ####################
-import "colors.sh"
-import "error_handling.sh"
-import "utils.sh"
-import "decorators.sh"
+################### IMPORT ####################
+importRaw "colors.sh"
+importRaw "error_handling.sh"
+importRaw "utils.sh"
+importRaw "decorators.sh"
 #################### SETUP ####################
 
-# Usage: import <package_name>
-import(){
+# Usage: importRaw <package_name>
+importRaw(){
 	local rawPath="https://raw.githubusercontent.com/propilideno/balias/main/lib/$1.sh"
 	source <(curl -sSL $1)
 }

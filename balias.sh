@@ -2,7 +2,7 @@
 #################### IMPORT ####################
 import "colors.sh"
 import "error_handling.sh"
-improt "utils.sh"
+import "utils.sh"
 import "decorators.sh"
 #################### SETUP ####################
 

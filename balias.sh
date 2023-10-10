@@ -1,17 +1,15 @@
 #!/bin/bash
-################### IMPORT ####################
-importRaw "colors.sh"
-importRaw "error_handling.sh"
-importRaw "utils.sh"
-importRaw "decorators.sh"
 #################### SETUP ####################
-
 # Usage: importRaw <package_name>
 importRaw(){
 	local rawPath="https://raw.githubusercontent.com/propilideno/balias/main/lib/$1.sh"
 	source <(curl -sSL $1)
 }
-
+################### IMPORT ####################
+importRaw "colors"
+importRaw "error_handling"
+importRaw "utils"
+importRaw "decorators"
 #################### MAIN ####################
 
 # API endpoint to list the content of the directory

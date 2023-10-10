@@ -3,7 +3,7 @@
 # Usage: importRaw <package_name>
 importRaw(){
 	local rawPath="https://raw.githubusercontent.com/propilideno/balias/main/lib/$1.sh"
-	source <(curl -sSL $1)
+	source <(curl -sSL "$rawPath")
 }
 ################### IMPORT ####################
 importRaw "colors"

@@ -33,7 +33,7 @@ status(){
 # Usage: executeRawFile <package_name>
 executeSetup(){
 	local rawPath="https://raw.githubusercontent.com/propilideno/balias/main/services/$1/setup.sh"
-	bash <(curl -sL $1)
+	bash <(curl -sL $rawPath)
 }
 
 # Usage: getPackage <package_name>

@@ -1,10 +1,18 @@
 #!/bin/bash
 #################### IMPORT ####################
-source lib/colors.sh
-source lib/error_handling.sh
-source lib/utils.sh
-source lib/decorators.sh
+import "colors.sh"
+import "error_handling.sh"
+improt "utils.sh"
+import "decorators.sh"
 #################### SETUP ####################
+
+# Usage: import <package_name>
+import(){
+	local rawPath="https://raw.githubusercontent.com/propilideno/balias/main/lib/$1.sh"
+	source <(curl -sSL $1)
+}
+
+#################### MAIN ####################
 
 # API endpoint to list the content of the directory
 api_endpoint="https://api.github.com/repos/propilideno/balias/contents/services"
@@ -27,6 +35,7 @@ if [ $? -eq 0 ]; then
 	# Show an interactive menu for the user to select the folder
     select option in "${options[@]}"; do
         if [ "$option" ]; then
+			echo "Selected: $option"
 			executeSetup "$option"
             break
         else

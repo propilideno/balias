@@ -95,13 +95,23 @@ installBalias(){
 		".zshrc"
 	)
 
-	# Loop through the configs
+	# Detect if balias is already installed
+	for config in "${configs[@]}"; do
+		path="$HOME/${config}"
+		local flag=1
+		local isInstalled=$(! grep -Fxq "$source_balias" "$path")
+		if [[ isInstalled && flag ]] ; then
+			question "Do you want to install balias?"
+			flag=0
+		fi
+	done
+
+	# Install in all shell configs
 	for config in "${configs[@]}"; do
 		path="$HOME/${config}"
 
 		# Grep to verify if the source is already installed
 		if ! grep -Fxq "$source_balias" "$path"; then
-			question "Do you want to install balias?"
 			echo "Installed in:  $path..."
 			echo "# ======== Added by balias ========" >> "$path"
 			echo "$source_balias" >> "$path"

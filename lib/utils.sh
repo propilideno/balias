@@ -96,9 +96,9 @@ installBalias(){
 	)
 
 	# Detect if balias is already installed
+	local flag=1
 	for config in "${configs[@]}"; do
 		path="$HOME/${config}"
-		local flag=1
 		local isInstalled=$(! grep -Fxq "$source_balias" "$path")
 		if [[ isInstalled && flag ]] ; then
 			question "Do you want to install balias?"

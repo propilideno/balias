@@ -5,6 +5,7 @@ importRaw(){
 	local rawPath="https://raw.githubusercontent.com/propilideno/balias/main/lib/$1.sh"
 	source <(curl -sSL "$rawPath")
 }
+# importRaw(){ source <(cat "lib/$1.sh") } # Test purposes
 ################### IMPORT ####################
 importRaw "colors"
 importRaw "error_handling"

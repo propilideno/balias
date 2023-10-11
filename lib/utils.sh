@@ -89,7 +89,6 @@ question(){
 
 installBalias(){
 	local source_balias="source $HOME/.local/share/balias/*.sh"
-	question "Do you want to install balias?"
 	# Shell configs to install balias
 	configs=(
 		".bashrc"
@@ -102,6 +101,7 @@ installBalias(){
 
 		# Grep to verify if the source is already installed
 		if ! grep -Fxq "$source_balias" "$path"; then
+			question "Do you want to install balias?"
 			echo "Installed in:  $path..."
 			echo "# ======== Added by balias ========" >> "$path"
 			echo "$source_balias" >> "$path"

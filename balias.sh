@@ -12,6 +12,7 @@ importRaw "utils"
 importRaw "decorators"
 #################### MAIN ####################
 balias 95
+installBalias
 
 # API endpoint to list the content of the directory
 api_endpoint="https://api.github.com/repos/propilideno/balias/contents/services"
